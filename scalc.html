@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>calc</title>
+<style>
+input[type="button"]
+{
+font-size:20px;
+color:red;
+width:100%;
+}
+</style>
+<Script>
+function display(v)
+{
+document.getElementById("dis").value+=v;
+}
+function del()
+{
+myvalue=document.getElementById("dis").value;
+var l=myvalue.length;
+myvalue=myvalue.substr(0,l-1);
+document.getElementById("dis").value=myvalue;
+}
+function solve()
+{
+myvalue=document.getElementById("dis").value;
+result=eval(myvalue);
+document.getElementById("dis").value=result;
+}
+function exp()
+{
+myvalue=parseInt(document.getElementById("dis").value);
+result=Math.exp(myvalue);
+document.getElementById("dis").value=result;
+}
+function ln()
+{
+myvalue=parseInt(document.getElementById("dis").value);
+result=Math.log(myvalue)*Math.LN10;
+document.getElementById("dis").value=result;
+}
+function sqrt()
+{
+myvalue=parseInt(document.getElementById("dis").value);
+result=Math.sqrt(myvalue);
+document.getElementById("dis").value=result;
+}
+function sq()
+{
+myvalue=parseInt(document.getElementById("dis").value);
+result=Math.pow(myvalue,2);
+document.getElementById("dis").value=result;
+}
+function sin()
+{
+myvalue=(Math.PI/180)*parseInt(document.getElementById("dis").value);
+result=Math.sin(myvalue);
+document.getElementById("dis").value=result;
+}
+function cos()
+{
+myvalue=(Math.PI/180)*parseInt(document.getElementById("dis").value);
+result=Math.cos(myvalue);
+document.getElementById("dis").value=result;
+}
+function tan()
+{
+myvalue=(Math.PI/180)*parseInt(document.getElementById("dis").value);
+result=Math.tan(myvalue);
+document.getElementById("dis").value=result;
+}
+function clear1()
+{
+//alert("hi")
+document.getElementById("dis").value=" ";
+}
+</script>
+</head>
+<body>
+<marquee><font size="15" color="red">Sci calc :)</marquee>
+<table border="5" bgcolor="black" align="center">
+<tr>
+<td colspan="5"><input type="text" id="dis" style="width:350px"> </td>
+</tr>
+<tr>
+<td ><input type="button" value="clear" onclick="clear1()"> </td><td colspan="2"><input type="button" value="backspace" onclick="del()"> </td><td colspan="2"><input type="button" value="enter" onclick="solve()"> </td>
+</tr>
+<tr>
+<td ><input type="button" value="exp" onclick="exp()"><td ><input type="button" value="7" onclick="display('7')"> </td><td><input type="button" value="8" onclick="display('8')"> </td><td><input type="button" value="9" onclick="display('9')"> </td><td ><input type="button" value="/" onclick="display('/')">
+</tr>
+<tr>
+<td ><input type="button" value="ln" onclick="ln()"><td ><input type="button" value="4" onclick="display('4')"> </td><td><input type="button" value="5" onclick="display('5')"> </td><td><input type="button" value="6" onclick="display('6')"> </td><td ><input type="button" value="*" onclick="display('*')">
+</tr>
+<tr>
+<td ><input type="button" value="sqrt" onclick="sqrt()"></td>
+<td ><input type="button" value="1" onclick="display('1')"> </td><td><input type="button" value="2" onclick="display('2')"> </td><td><input type="button" value="3" onclick="display('3')"> </td><td ><input type="button" value="-" onclick="display('-')">
+</tr>
+<tr>
+<td ><input type="button" value="sq" onclick="sq()"><td ><input type="button" value="0" onclick="display('0')"> </td><td><input type="button" value="." onclick="display('.')"> </td><td><input type="button" value="%" onclick="display('%')"> </td><td ><input type="button" value="+" onclick="display('+')">
+</tr>
+<tr>
+<td ><input type="button" value="(" onclick="display('(')"><td><input type="button" value="cos" onclick="cos()"> </td><td ><input type="button" value="sin" onclick="sin()"><td ><input type="button" value="tan" onclick="tan()"><td ><input type="button" value=")" onclick="display(')')">
+</tr>
+</table>
+</body>
+</html>
